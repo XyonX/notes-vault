@@ -60,6 +60,10 @@
 - first_non_repeating_character: solved
 - longest_substring_without_repeating_characters: solved
 - string_to_integer_atoi: solved
+- valid_anagram: solved
+- group_anagrams: solved
+- longest_common_subsequence: solved
+- longest_palindromic_subsequence: attempted
 
 ### Linked_List
 - create_linked_list: solved

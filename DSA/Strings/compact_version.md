@@ -28,3 +28,31 @@
 - Implementation of custom atoi function to convert string to integer
 - Includes iterative approach
 - Handles whitespace, signs, and digit conversion
+
+## valid_anagram
+- Notes:
+- Efficient anagram checking using frequency array
+- Handles case insensitivity with tolower
+- Validates input to ensure only alphabetic characters
+- Time Complexity: O(n), Space Complexity: O(1)
+
+## group_anagrams
+- Notes:
+- Groups anagrams using sorted string signatures as keys
+- Uses hash map for efficient grouping
+- Time Complexity: O(n * k log k), Space Complexity: O(n * k)
+- Includes helper function for displaying grouped results
+
+## longest_common_subsequence
+- Notes:
+- Dynamic programming solution with memoization
+- Two approaches: recursive (inefficient) and DP (optimal)
+- Time Complexity: O(m*n), Space Complexity: O(m*n)
+- Comprehensive test cases covering various scenarios
+
+## longest_palindromic_subsequence
+- Notes:
+- Two implementations: backtracking (inefficient) and recursive (still needs optimization)
+- Helper function for palindrome checking
+- Notes that DP solution is needed for optimal performance
+- Current implementations exceed time limits for large inputs
