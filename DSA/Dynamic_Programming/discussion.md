@@ -26,3 +26,27 @@ The base cases are:
 
 For any other stair i, the minimum cost is:
 min(frogJump(i-1) + abs(heights[i] - heights[i-1]), frogJump(i-2) + abs(heights[i] - heights[i-2]))
+
+## Fibonacci, Tribonacci, and Minimum Cost Problems
+This collection demonstrates fundamental DP patterns:
+
+### Fibonacci Sequence
+The classic DP problem where each number is the sum of the two preceding ones. The bottom-up approach efficiently computes the nth Fibonacci number by iteratively building the solution from base cases.
+
+### Tribonacci Number
+An extension of Fibonacci where each term is the sum of the three preceding terms. This shows how easily DP patterns can be extended to different recurrence relations.
+
+### Minimum Cost Climbing Stairs
+A cost-optimization variant where you can start from either step 0 or 1, and each step has an associated cost. The solution involves finding the path with minimum total cost to reach beyond the last step.
+
+### Key DP Patterns Demonstrated
+1. **Bottom-up Tabulation**: Building solutions from base cases iteratively
+2. **State Transition**: Defining how each state depends on previous states
+3. **Space Optimization**: While these examples use O(n) space, many can be optimized to O(1) by recognizing that only the last few states are needed
+4. **Multiple Base Cases**: Handling problems with more than one base case (like Tribonacci with three base cases)
+
+### Common Pitfalls
+- Forgetting to handle edge cases (n=0, n=1, n=2)
+- Incorrectly defining the recurrence relation
+- Not considering space optimization opportunities
+- Mixing up 0-based and 1-based indexing

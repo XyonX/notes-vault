@@ -1,0 +1,86 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+#include <bits/stdc++.h>
+
+using namespace std;
+
+//how to solve dp
+//01 manually f ill base case
+//iterate from small prorblem to get the accumukated larget one 
+//or bottom up approach
+
+//dp 00 fibo
+int fibo(int n){
+    
+    vector<int>dp(n+1);
+    dp[0]=0;
+    dp[1]=1;
+    for(int i=2;i<=n;i++){
+        dp[i]=dp[i-1]+dp[i-2];
+    }
+    return dp[n];
+}
+//dp 01 climbind stares (leetcode 70)
+//numebr of ways to come to nth stare
+//basiocall sum of ways to come at n-1 and n-2
+int climbingStares(int n){
+    vector<int>dp(n+1);
+    dp[0]=1;
+    dp[1]=1;
+    
+    for(int i=2;i<=n;i++){
+        dp[i]=dp[i-1]+dp[i-2];
+    }
+    return dp[n];
+}
+
+//dp 02 nth tribonacci leeetcode 1137
+class Solution {
+public:
+    int tribonacci(int n) {
+
+                if(n == 0) return 0;
+        if(n == 1 || n == 2) return 1;
+        
+        vector<int>dp(n+1);
+        dp[0]=0;
+        dp[1]=1;
+        dp[2]=1;
+
+        for(int i=3;i<=n;i++){
+            dp[i]=dp[i-1]+dp[i-2]+dp[i-3];
+        }
+        return dp[n];
+    }
+};
+
+//dp 04 miniimum cost climbing stares
+
+//recursioo
+int minCost_rec( int i, vector<int>&cost){
+    if(i == 0 or i==1)return cost[i];
+    
+    return cost[i]+min(minCost_rec(i-1,cost),minCost_rec(i-2,cost));
+}
+//dp
+class Solution {
+public:
+    int minCostClimbingStairs(vector<int>& cost) {
+    int n=cost.size();
+    vector<int>dp(n);
+    
+    dp[0]=cost[0];
+    dp[1]=cost[1];
+    for(int i=2;i<n;i++){
+        dp[i]= cost[i]+min(dp[i-1],dp[i-2]);
+    }
+    return min(dp[n-1],dp[n-2]);
+
+    }
+};
+
+int main() {
+cout<<fibo(5);
+
+    return 0;
+}

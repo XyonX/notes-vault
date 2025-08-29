@@ -106,6 +106,7 @@
 - climbing_stairs: solved
 - frog_jump: solved
 - grid_unique_paths_recursive: solved
+- fibo_climbing_stairs_tribonacci_min_cost: solved
 
 ### Binary_Search
 - binary_search_variants: solved
