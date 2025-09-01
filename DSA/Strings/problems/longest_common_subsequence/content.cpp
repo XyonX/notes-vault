@@ -1,60 +1,61 @@
 #include <iostream>
 #include <bits/stdc++.h>
-#include <vector>
-#include <string>
-
 using namespace std;
 
-// Without memoization (inefficient for large inputs)
-int lcs_1(int i, int j, string s1,string s2){
+// Recursive approach without memoization (inefficient for large inputs)
+int lcs_rec(string s1, string s2, int i1, int i2){
+    if(i1 < 0 || i2 < 0) return 0;
     
-    if(i<0 || j<0)return 0;
-    
-    if(s1[i] == s2[j]){
-        return 1+lcs_1(i-1,j-1,s1,s2);
+    // The characters match so we move both pointers
+    if(s1[i1] == s2[i2]){
+        return 1 + lcs_rec(s1, s2, i1-1, i2-1);
     }
     
-    int lh=lcs_1(i-1,j,s1,s2);
-    int rh=lcs_1(i,j-1,s1,s2);
-    return max(lh,rh);
+    return max(lcs_rec(s1, s2, i1, i2-1), lcs_rec(s1, s2, i1-1, i2));
 }
 
-// With memoization (efficient)
-int lcs(int i, int j, const string& s1, const string& s2, vector<vector<int>>& dp)
-{
+// Dynamic Programming approach with memoization
+int lcs_dp(string s1, string s2, int i1, int i2, vector<vector<int>>& dp){
+    if(i1 < 0 || i2 < 0) return 0;
     
-    if(i<0 || j<0)return 0;
-    if(dp[i][j]!= -1)return dp[i][j];
+    // Check in dp if already computed
+    if(dp[i1][i2] != -1) return dp[i1][i2];
     
-    if(s1[i] == s2[j]){
-        return dp[i][j]= 1+lcs(i-1,j-1,s1,s2,dp);
+    // The characters match so we move both pointers
+    if(s1[i1] == s2[i2]){
+        return dp[i1][i2] = 1 + lcs_dp(s1, s2, i1-1, i2-1, dp);
     }
-    return  dp[i][j]= max(lcs(i-1,j,s1,s2,dp), lcs(i,j-1,s1,s2,dp));
+    
+    return dp[i1][i2] = max(lcs_dp(s1, s2, i1, i2-1, dp), lcs_dp(s1, s2, i1-1, i2, dp));
 }
 
+// Wrapper function for DP approach
 int longestCommonSubsequence(string text1, string text2) {
-    vector<vector<int>>dp(text1.size(),vector<int>(text2.size(),-1));
-    return lcs(text1.size()-1,text2.size()-1,text1,text2,dp);
+    vector<vector<int>> dp(text1.size(), vector<int>(text2.size(), -1));
+    return lcs_dp(text1, text2, text1.size() - 1, text2.size() - 1, dp);
 }
 
 int main() {
-    // Test Case 1: Basic match
-    cout << "Test 1: " << longestCommonSubsequence("abcde", "ace") << " (Expected: 3)" << endl;
-
-    // Test Case 2: Identical strings
-    cout << "Test 2: " << longestCommonSubsequence("abc", "abc") << " (Expected: 3)" << endl;
-
-    // Test Case 3: No common subsequence
-    cout << "Test 3: " << longestCommonSubsequence("abc", "def") << " (Expected: 0)" << endl;
-
-    // Test Case 4: One empty string
-    cout << "Test 4: " << longestCommonSubsequence("", "abc") << " (Expected: 0)" << endl;
-
-    // Test Case 5: Both empty strings
-    cout << "Test 5: " << longestCommonSubsequence("", "") << " (Expected: 0)" << endl;
-
-    // Test Case 6: Subsequence at the end
-    cout << "Test 6: " << longestCommonSubsequence("xyzabc", "abc") << " (Expected: 3)" << endl;
+    vector<pair<string, string>> testCases = {
+        {"abcde", "ace"},       // Expected LCS length: 3 ("ace")
+        {"abc", "abc"},         // Expected LCS length: 3 ("abc")
+        {"abc", "def"},         // Expected LCS length: 0 (no common subsequence)
+        {"aggtab", "gxtxayb"},  // Expected LCS length: 4 ("gtab")
+        {"", "abc"},            // Expected LCS length: 0 (empty string)
+        {"abc", ""}             // Expected LCS length: 0 (empty string)
+    };
+    
+    cout << "=== Recursive Approach (Inefficient) ===" << endl;
+    for (auto &[s1, s2] : testCases) {
+        int result = lcs_rec(s1, s2, s1.size() - 1, s2.size() - 1);
+        cout << "LCS(\"" << s1 << "\", \"" << s2 << "\") = " << result << endl;
+    }
+    
+    cout << "\n=== Dynamic Programming Approach (Efficient) ===" << endl;
+    for (auto &[s1, s2] : testCases) {
+        int result = longestCommonSubsequence(s1, s2);
+        cout << "LCS(\"" << s1 << "\", \"" << s2 << "\") = " << result << endl;
+    }
 
     return 0;
 }

@@ -55,6 +55,7 @@
 - Classic dynamic programming problem with two approaches:
   1. Recursive without memoization: Exponential time complexity
   2. DP with memoization: Polynomial time complexity O(m*n)
+- Enhanced with better parameter naming and comments for clarity
 - The DP approach uses a 2D table to store intermediate results
 - Key insight: overlapping subproblems can be solved once and reused
 - Comprehensive test cases validate the solution across various scenarios

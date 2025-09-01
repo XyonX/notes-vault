@@ -52,6 +52,7 @@
 - search_in_rotated_sorted_array: solved
 
 ### Arrays
+
 ### Strings
 - check_anagrams: solved
 - check_palindrome: solved
@@ -113,6 +114,8 @@
 
 ### Stack
 - parenthesis_checker: solved
+- next_greater_element: solved
+- asteroid_collision: solved
 
 ## Operating_System
 - os_roadmap: solved

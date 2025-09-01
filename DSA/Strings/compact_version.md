@@ -47,6 +47,7 @@
 - Notes:
 - Dynamic programming solution with memoization
 - Two approaches: recursive (inefficient) and DP (optimal)
+- Enhanced with better parameter naming and comments
 - Time Complexity: O(m*n), Space Complexity: O(m*n)
 - Comprehensive test cases covering various scenarios
 

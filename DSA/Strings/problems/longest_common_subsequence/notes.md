@@ -11,6 +11,7 @@ Given two strings `text1` and `text2`, return the length of their longest common
   - If characters match, move both pointers forward and add 1
   - If characters don't match, take max of moving either pointer forward
 - **Problem**: Exponential time complexity O(2^(m+n))
+- **Enhanced**: Our implementation includes proper parameter naming and comments
 
 ### 2. Dynamic Programming (With Memoization)
 - **DP Table**: 2D vector initialized with -1
@@ -18,14 +19,20 @@ Given two strings `text1` and `text2`, return the length of their longest common
 - **Memoization**: Store computed results to avoid redundant calculations
 - **Time Complexity**: O(m*n) where m and n are string lengths
 - **Space Complexity**: O(m*n) for DP table
+- **Enhanced**: Our implementation includes proper parameter naming and comments
 
 ## Key Features
 - Handles empty strings gracefully
 - Efficient solution using dynamic programming
 - Comprehensive test cases covering various scenarios
+- Comparison between recursive and DP approaches
 
 ## Code Implementation
-The `longestCommonSubsequence` function implements the DP approach with memoization.
+The `lcs_rec` function implements the recursive approach.
+The `lcs_dp` and `longestCommonSubsequence` functions implement the DP approach with memoization.
 
 ## Status
 Solved
+
+## LeetCode Link
+[Longest Common Subsequence](https://leetcode.com/problems/longest-common-subsequence/)

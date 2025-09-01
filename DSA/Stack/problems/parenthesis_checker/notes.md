@@ -14,22 +14,23 @@ This solution uses a stack data structure to validate the parentheses:
 2. If an opening bracket is encountered, push it onto the stack
 3. If a closing bracket is encountered:
    - Check if the stack is empty; if so, return false
-   - Pop the top element from the stack
-   - Check if the popped element matches the current closing bracket
+   - Check if the top element matches the current closing bracket
+   - If matching, pop the element from the stack
    - If not matching, return false
 4. After processing all characters, if the stack is not empty, return false
 5. Otherwise, return true
+
+## Enhanced Features in New Implementation
+- Fixed the typo in function name: "balancePranthesis" → "balanceParenthesis"
+- Improved code readability with better comments
+- Added handling for non-bracket characters (they are ignored rather than causing failure)
+- Added comprehensive test cases including edge cases and mixed content
 
 ## Time Complexity
 O(n) where n is the length of the string
 
 ## Space Complexity
 O(n) in the worst case when all characters are opening brackets
-
-## Known Issues
-- The function name has a typo: "checkPranthesis" should be "checkParenthesis"
-- The code doesn't handle characters other than parentheses (returns false for any other character)
-- No comments in the code for better readability
 
 ## LeetCode Link
 [Valid Parentheses](https://leetcode.com/problems/valid-parentheses/)

@@ -1,7 +1,1 @@
-Added DFS traversal implementation to Graph section
-
-- Created new DFS traversal problem with complete code implementation
-- Added detailed notes explaining the algorithm and key concepts
-- Updated compact_version.md and discussion.md with DFS content
-- Updated progress tracking in progress.md
-- Added entry to today's log file
+Added new Stack problems: Next Greater Element and Asteroid Collision. Enhanced existing implementations for Parenthesis Checker and Longest Common Subsequence. Updated documentation and progress tracking.
