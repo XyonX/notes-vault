@@ -57,3 +57,17 @@
 - Helper function for palindrome checking
 - Notes that DP solution is needed for optimal performance
 - Current implementations exceed time limits for large inputs
+
+## longest_substring_without_repeating_characters
+- Notes:
+- Sliding window technique with frequency array to track last seen index of characters
+- Uses two pointers to maintain current window
+- Time Complexity: O(n), Space Complexity: O(1)
+
+## longest_common_substring
+- Notes:
+- Two recursive implementations for finding longest common substring
+- First approach builds substring during recursion and requires reversal
+- Second approach returns longer of two possible substrings when characters don't match
+- Both have exponential time complexity O(2^(m+n))
+- Known Issues: Inefficient for large inputs; DP solution would be better

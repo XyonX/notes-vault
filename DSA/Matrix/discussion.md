@@ -58,3 +58,17 @@ Rotating a matrix by 90 degrees clockwise can be efficiently achieved in two ste
 2. Reverse each row
 
 This approach works in O(n²) time with O(1) extra space, making it optimal for this problem.
+
+## set_matrix_zeroes
+
+The Set Matrix Zeroes problem requires setting entire rows and columns to zero if any element in the matrix is zero, while doing it in-place to optimize space complexity.
+
+The key insight is to use the first row and first column of the matrix itself as markers to indicate which rows and columns should be zeroed. This approach reduces the space complexity from O(m+n) to O(1).
+
+The algorithm involves:
+1. Using two boolean flags to track if the first row or column originally contained zeros
+2. Using the first cell of each row and column as a marker for whether that row/column should be zeroed
+3. Processing the matrix in a specific order to avoid overwriting marker information prematurely
+4. Finally handling the first row and column based on the initial flags
+
+This is a classic example of space optimization in matrix problems, where we cleverly reuse existing space to store additional information.

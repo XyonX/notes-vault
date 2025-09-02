@@ -1,34 +1,22 @@
-### Problem: Longest Substring Without Repeating Characters
+# Longest Substring Without Repeating Characters
 
-**LeetCode Link:** [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
+## Problem Statement
+Given a string s, find the length of the longest substring without repeating characters.
 
-This problem is a classic example of the **sliding window** technique. The goal is to find the length of the longest substring that contains no repeating characters.
+## Approach
+This solution uses the sliding window technique with two pointers (left and right) and a frequency array to track the last seen index of each character.
 
-### Approach: Sliding Window
+## Solution Explanation
+1. Use a frequency array of size 256 (for all ASCII characters) initialized to -1 to store the last seen index of each character
+2. Maintain two pointers: left (l) for the start of the current window and right (r) for the end
+3. For each character at position r:
+   - If the character was seen before and its last seen index is within the current window (>= l), move the left pointer to the position after the last occurrence
+   - Update the maximum length if the current window is larger
+   - Update the last seen index of the current character to r
+4. Return the maximum length found
 
-1.  **Initialization**:
-    *   `maxLength`: Stores the maximum length found so far (initialized to 0).
-    *   `l`: The left pointer of the sliding window (initialized to 0).
-    *   `freqMap`: A hash map to store the most recent index of each character encountered. An array of size 256 could also be used for ASCII characters for slightly better performance.
+## Time Complexity
+O(n) - We traverse the string once
 
-2.  **Iteration**:
-    *   We use a `for` loop with a right pointer `r` to expand the window from left to right.
-    *   At each character `s[r]`, we check if it's already in our `freqMap`.
-
-3.  **Shrinking the Window**:
-    *   If `s[r]` is found in `freqMap`, it means we have a repeating character. To maintain a window with unique characters, we must shrink it from the left.
-    *   The new left pointer `l` should be `max(l, freqMap[s[r]] + 1)`. This is a crucial step:
-        *   `freqMap[s[r]] + 1` gives us the index right after the last occurrence of the current character.
-        *   We take the `max` with the current `l` to ensure the left pointer only moves forward. This handles cases where a repeating character's last seen index is outside our current valid window (i.e., to the left of `l`).
-
-4.  **Updating Max Length**:
-    *   After adjusting the window, the length of the current valid substring is `r - l + 1`.
-    *   We update `maxLength = max(maxLength, r - l + 1)`.
-
-5.  **Updating the Frequency Map**:
-    *   Finally, we update `freqMap[s[r]] = r` with the current index of the character.
-
-### Complexity
-
-*   **Time Complexity**: O(N), where N is the length of the string. We iterate through the string once.
-*   **Space Complexity**: O(min(N, M)), where M is the size of the character set (e.g., 256 for ASCII). In the worst case, all characters are unique, and we store all of them in the map.
+## Space Complexity
+O(1) - We use a fixed-size array of 256 elements regardless of input size

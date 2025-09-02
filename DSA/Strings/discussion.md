@@ -67,3 +67,22 @@
 - Helper function `isPalindrome` efficiently checks if a string is a palindrome
 - The problem requires a DP solution for optimal performance
 - Current implementations serve as learning exercises but need optimization for large inputs
+
+## longest_substring_without_repeating_characters
+- Classic sliding window problem that efficiently finds the longest substring with unique characters
+- Uses two pointers (left and right) to maintain a dynamic window
+- Employs a frequency array to track the last seen index of each character
+- Key insight: When a repeated character is found, move the left pointer to maintain uniqueness
+- Time complexity: O(n) where n is the length of the string
+- Space complexity: O(1) using a fixed-size array for character frequencies
+- This is an optimal solution that demonstrates the sliding window technique effectively
+
+## longest_common_substring
+- String matching problem that finds the longest contiguous sequence of characters common to two strings
+- Two recursive implementations provided, both with exponential time complexity
+- First approach builds the substring during recursion and requires a final reversal
+- Second approach compares substring lengths and returns the longer one when characters don't match
+- Both implementations explore all possible paths, making them inefficient for large inputs
+- This problem demonstrates the difference between substring (contiguous) and subsequence (not necessarily contiguous)
+- A dynamic programming solution would be more efficient with O(m*n) time complexity
+- The problem is a good example of how recursion can lead to exponential time complexity and why optimization techniques like memoization or DP are needed

@@ -102,3 +102,6 @@
 
 ## search_in_rotated_sorted_array
 - Notes: Search for target in rotated sorted array. Uses modified binary search. Time complexity O(log n).
+
+## remove_duplicates_from_sorted_array
+- Notes: Remove duplicates from sorted array in-place using two-pointer technique. Time complexity O(n), space complexity O(1).

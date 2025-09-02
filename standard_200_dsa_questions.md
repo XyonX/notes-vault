@@ -7,11 +7,11 @@ This list compiles the most frequently asked 200 Data Structures & Algorithms (D
 ## Array
 
 - [x] 1. Two Sum
-- [ ] 2. Best Time to Buy and Sell Stock
-- [ ] 3. Maximum Subarray (Kadane's Algorithm)
+- [x] 2. Best Time to Buy and Sell Stock
+- [x] 3. Maximum Subarray (Kadane's Algorithm)
 - [ ] 4. Merge Intervals
-- [ ] 5. Merge Sorted Array
-- [ ] 6. Remove Duplicates from Sorted Array
+- [x] 5. Merge Sorted Array
+- [x] 6. Remove Duplicates from Sorted Array
 - [ ] 7. Search in Rotated Sorted Array
 - [ ] 8. Find Minimum in Rotated Sorted Array
 - [ ] 9. Rotate Array

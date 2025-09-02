@@ -10,3 +10,6 @@ This folder contains problems related to Stack data structure.
 
 ## asteroid_collision
 - Notes: We are given an array asteroids of integers representing asteroids in a row. For each asteroid, the absolute value represents its size, and the sign represents its direction. Find out the state of the asteroids after all collisions.
+
+## largest_rectangle_in_histogram
+- Notes: Given an array of integers heights representing the histogram's bar height where the width of each bar is 1, return the area of the largest rectangle in the histogram.

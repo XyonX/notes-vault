@@ -13,3 +13,6 @@ This topic covers various operations and algorithms related to 2D matrices.
 
 ## rotate_matrix
 - Notes: Rotates a square matrix 90 degrees clockwise using transpose and row reversal
+
+## set_matrix_zeroes
+- Notes: Given an m x n integer matrix, if an element is 0, set its entire row and column to 0's using a space-optimized approach

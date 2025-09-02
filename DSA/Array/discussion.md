@@ -203,3 +203,13 @@ The algorithm uses a modified binary search:
 This approach maintains O(log n) time complexity and O(1) space complexity. The problem demonstrates how to adapt classic algorithms to handle modified input structures and how to leverage the properties of the data structure to maintain efficiency.
 
 [LeetCode Problem: Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/)
+
+## remove_duplicates_from_sorted_array
+
+- Classic two-pointer problem that efficiently removes duplicates from a sorted array in-place
+- Uses a slow pointer to track the position of the last unique element and a fast pointer to scan through the array
+- When a new unique element is found (different from the element at the slow pointer), it's placed right after the slow pointer
+- The algorithm maintains the relative order of elements while removing duplicates
+- Time complexity: O(n) - single pass through the array
+- Space complexity: O(1) - modifies the array in-place without using extra space
+- This is an optimal solution that's commonly used in systems programming where memory efficiency is important

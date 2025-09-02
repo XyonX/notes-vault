@@ -50,6 +50,7 @@
 - product_of_array_except_self: solved
 - merge_intervals: solved
 - search_in_rotated_sorted_array: solved
+- remove_duplicates_from_sorted_array: solved
 
 ### Arrays
 
@@ -65,6 +66,7 @@
 - group_anagrams: solved
 - longest_common_subsequence: solved
 - longest_palindromic_subsequence: attempted
+- longest_common_substring: solved
 
 ### Linked_List
 - create_linked_list: solved
@@ -116,6 +118,10 @@
 - parenthesis_checker: solved
 - next_greater_element: solved
 - asteroid_collision: solved
+- largest_rectangle_in_histogram: solved
+
+### Matrix
+- set_matrix_zeroes: solved
 
 ## Operating_System
 - os_roadmap: solved

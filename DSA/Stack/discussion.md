@@ -17,3 +17,9 @@ This folder contains problems related to Stack data structure.
 - The stack represents asteroids that are currently "alive" and moving right.
 - When a left-moving asteroid is encountered, we simulate collisions with right-moving asteroids in the stack.
 - Multiple collision scenarios must be handled: same size (both explode), larger right-moving (left explodes), larger left-moving (right explodes).
+
+## largest_rectangle_in_histogram
+- This problem showcases an advanced application of stack data structure.
+- The key insight is to find the previous smaller element (PSE) and next smaller element (NSE) for each bar.
+- For each bar, the maximum rectangle that can be formed with that bar as the smallest one is calculated using the width between PSE and NSE.
+- The solution efficiently computes these boundaries in O(n) time using a single stack traversal in each direction.
