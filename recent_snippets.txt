@@ -1,0 +1,254 @@
+//longest palindromic substring
+
+
+class Solution {
+public:
+    string longestPalindrome(string s) {
+
+        string longest="";
+        int maxLength=0;
+        int n=s.size();
+        int stringStart=0;
+        int stringEnd=0;
+
+        for(int i=0;i<n;i++){
+
+            //for odd length
+            int l=i;
+            int r=i;
+            while(l>=0 && r<n && s[l]==s[r]){
+                l--;
+                r++;
+            }
+
+            if(r-l-1 > maxLength){
+                maxLength=r-l-1;
+                stringStart=l+1;
+                stringEnd=r-1;
+            }
+
+            //for even length
+            l=i;
+            r=i+1;
+            while(l>=0 && r<n && s[l]==s[r]){
+                l--;
+                r++;
+            }
+            if(r-l-1 > maxLength){
+            maxLength=r-l-1;
+            stringStart=l+1;
+            stringEnd=r-1;
+            }
+        }
+
+        return s.substr(stringStart,maxLength);
+        
+    }
+};
+
+//tree array representation
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+
+
+using namespace std;
+
+// ARRAY REPRESENTAION OF TREE
+//[10, 20, 30, 40, 50, 60] its a level order if we put sequentially in tree
+
+/*
+Root is at index 0
+
+Left child of node i → 2*i + 1
+
+Right child of node i → 2*i + 2
+
+Parent of node i → (i - 1) / 2
+
+*/
+
+void printTree (vector<int>&tree){
+    for(int i=0;i<tree.size();i++){
+        cout<<tree[i]<<" ";
+    }
+    cout<<endl;
+}
+
+int getParent(vector<int>&tree,int i){
+    if(i==0)return tree[0];
+    else return tree[(i-1)/2];
+}
+
+int getLeftChild(vector<int>&tree ,int i){
+    int index= 2*i+1;
+    if(index>=tree.size())return 0;
+    else return tree[index];
+}
+int getRightChild(vector<int>&tree ,int i){
+        int index= 2*i+2;
+    if(index>=tree.size())return 0;
+    else return tree[index];
+}
+void printChildren(vector<int>&tree, int i){
+            int index= 2*i+1;
+    if(index>=tree.size())
+    cout<<"NOT BOTH CHILD EXIXT";
+    
+    cout<<tree[index]<<" "<<tree[index+1]<<endl;
+    
+    
+}
+
+void dfs_pre(vector<int>&tree){
+    stack<int>st;
+    st.push(0);
+    
+    while(!st.empty()){
+        int root_index=st.top();
+        st.pop();
+        cout<<tree[root_index]<<" ";
+        int leftIndex= (2*root_index)+1;
+        int rightIndex = (2*root_index)+2;
+        if(rightIndex<tree.size()) st.push(rightIndex);
+        if(leftIndex<tree.size())st.push(leftIndex);
+    }
+}
+
+void dfs_in(vector<int>&tree){
+    stack<int>st;
+    st.push(0);
+    
+    while(!st.empty()){
+        int root_index=st.top();
+        st.pop();
+        int leftIndex= (2*root_index)+1;
+        int rightIndex = (2*root_index)+2;
+        if(rightIndex<tree.size()) st.push(rightIndex);
+        if(leftIndex<tree.size())st.push(leftIndex);
+    }
+}
+
+
+
+int main() {
+    vector<int>tree={10,20,30,40,50,60};
+    dfs_pre(tree);
+
+    return 0;
+}
+
+//tree inorder iterative
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+
+using namespace std;
+
+struct Node{
+    int val;
+    Node*left;
+    Node*right;
+    
+    Node(int data){
+        val=data;
+        left=NULL;
+        right=NULL;
+    }
+};
+
+
+//keep this inorder version
+void inorder(Node*root){
+    stack<Node*>st;
+    st.push(root);
+    
+    while(!st.empty()){
+        Node*current=st.top();
+        
+        if(current->left==NULL){
+            cout<<current->val<<" ";
+            st.pop();
+            
+            // If there’s a right child, push it
+            if (current->right != nullptr) {
+                st.push(current->right);
+            }
+            continue;
+ 
+        }
+        
+                Node* leftChild = current->left;
+        current->left = nullptr;   // ⚡ key trick: nullify so we don't revisit
+        st.push(leftChild);
+    }
+}
+
+
+int main() {
+    Node* root = new Node(10);
+    root->left=new Node(20);
+    root->right=new Node(30);
+    
+    root->left->left= new Node(40);
+    root->left->right=new Node(50);
+    root->right->left= new Node(60);
+    
+
+    cout << "Inorder traversal of the tree: ";
+    inorder(root);
+    cout << endl;
+
+    return 0;
+}
+
+//max heap 
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+
+using namespace std;
+
+class Heap{
+    
+    vector<int>data;
+    int size;
+    
+    public:
+    Heap(){
+        size=0;
+    }
+    void insert(int val){
+        //push the value 
+        data.push_back(val);
+        size++;
+        //adjust the value
+        int current = size - 1;
+        while(current > 0){
+            int parent =(current-1)/2;
+            if(data[parent]<data[current]){
+                swap(data[parent],data[current]);
+                current=parent;
+            }else {
+                break;
+            }
+                
+        }
+        
+    
+    }
+    
+    void print(){
+        for(int i=0;i<size;i++){
+            cout<<data[i]<<" ";
+        }
+        cout<<endl;
+    }
+    
+};
+
+int main() {
+
+    Heap h;
+    h.insert(10);
+    h.insert(20);
+    h.print();
+    return 0;
+}
