@@ -19,6 +19,13 @@ ON IS also used to represent date and time
 	He will come on momnday
 	 They meet me on sundat
 	 i was born on 06 oct 2000
+ON IS ALSO USED TO INTERACTION WITH MACINE
+	 He is on the phone
+	 The show will be casted on television
+	 she has been on the computer
+	 he is solving the sum on calcuator
+ ON IS ALSO USED TO SHOW BODYPART
+	 she kisser her on forehead
 	 
 
 
