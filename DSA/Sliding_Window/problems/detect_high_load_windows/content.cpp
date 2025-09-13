@@ -5,7 +5,7 @@ using namespace std;
 /*
 Identify time periods when a system experiences high load based on a rolling average calculation. For each minute in the monitoring period, calculate the average load over the most recent window of minutes. If this average exceeds the specified threshold, include that minute in your results.
 The function detectHighLoadWindows will take three inputs:
-int loadsin]: system load at each minute i (O-based) int windowSize: size of the rolling window in minutes int threshold: average load threshold to compare
+int loads[]: system load at each minute i (0-based) int windowSize: size of the rolling window in minutes int threshold: average load threshold to compare
 against
 
 
@@ -15,38 +15,35 @@ vector<int> detectHighLoadWindows(vector<int>& loads, int windowSize, int thresh
     
 if (loads.size() < windowSize) return {};
 
-    // vector<int>res(loads.size()-windowSize+1);
-    vector<int>res;
+// vector<int>res(loads.size()-windowSize+1);
+vector<int>res;
     
-    long long  windowSum=0;
-    for(int i=0;i<windowSize;i++){
-        windowSum+=loads[i];
+long long  windowSum=0;
+for(int i=0;i<windowSize;i++){
+    windowSum+=loads[i];
+}
+
+//this works as if we multiply two value in. int it will pridcut int res so multple wiht a explicit long long 
+//THIS EXPRESSION WILL ALSO WORK
+//  if(windowSum>1LL * threshold * windowSize)
+long long anyVal=1;
+if(windowSum>= anyVal * threshold * windowSize)
+res.push_back(0);
+
+for(int i=1; i<=loads.size()-windowSize;i++){
+    windowSum-=loads[i-1];
+    windowSum+=loads[i+windowSize-1];
+    if(windowSum>= 1LL * threshold * windowSize){
+        res.push_back(i);
     }
+}
+
+return res;
     
-    //this works as if we multiply two value in. int it will pridcut int res so multple wiht a explicit long long 
-    //THIS EXPRESSION WILL ALSO WORK
-    //  if(windowSum>1LL * threshold * windowSize)
-    long long anyVal=1;
-    if(windowSum>= anyVal * threshold * windowSize)
-    res.push_back(0);
     
-    for(int i=1; i<=loads.size()-windowSize;i++){
-        windowSum-=loads[i-1];
-        windowSum+=loads[i+windowSize-1];
-        if(windowSum>= 1LL * threshold * windowSize){
-            res.push_back(i);
-        }
-    }
-    
-    return res;
     
     
 }
-
-
-
-
-
 
 int main() {
     // Test Case 1: Basic case
@@ -147,5 +144,3 @@ int main() {
 
     return 0;
 }
-
-

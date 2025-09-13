@@ -1,4 +1,6 @@
-// Online C++ compiler to run C++ program online
+q1--
+
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -144,6 +146,98 @@ int main() {
     cout << "Test Case 12: ";
     for (int idx : result12) cout << idx << " ";
     cout << endl;
+
+    return 0;
+}
+
+
+
+
+
+q2--
+
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+using namespace std;
+
+
+/*
+
+The problem statement, based on the provided image and context, is as follows:
+
+The stock performance of a company is being examined to assess its net profit over time.
+For a given analysis parameter ( k ), an interval of ( k ) consecutive months is considered highly profitable if the stock prices increase strictly throughout those months. Given the stock prices for ( n ) months and the analysis parameter ( k ), determine the number of such highly profitable intervals.
+*/
+
+
+
+int countHighlyProfitableMonths(vector <int>stockPrices, int k) {
+    
+    int size=stockPrices.size();
+    int count=0;
+
+    for(int i=0;i<=size-k;i++){
+        bool flag = true;
+        for(int j=i;j<i+k-1;j++){
+            if(stockPrices[j] >= stockPrices[j+1]){
+                flag=false;
+                break;
+            }
+        }
+        if(flag)
+        count++;
+    }
+    
+    return count;
+}
+
+
+
+
+
+
+int main() {
+    // Test 1: Example case
+    vector<int> prices1 = {1, 5, 3, 5, 7, 8};
+    int k1 = 3;
+    cout << "Test 1 Output = " << countHighlyProfitableMonths(prices1, k1) 
+         << " | Expected = 2" << endl;
+
+    // Test 2: Fully increasing sequence
+    vector<int> prices2 = {1, 2, 3, 4, 5};
+    int k2 = 2;
+    cout << "Test 2 Output = " << countHighlyProfitableMonths(prices2, k2) 
+         << " | Expected = 4" << endl;
+
+    // Test 3: Fully decreasing sequence
+    vector<int> prices3 = {5, 4, 3, 2, 1};
+    int k3 = 3;
+    cout << "Test 3 Output = " << countHighlyProfitableMonths(prices3, k3) 
+         << " | Expected = 0" << endl;
+
+    // Test 4: Mixed with plateaus
+    vector<int> prices4 = {2, 2, 3, 4, 5};
+    int k4 = 3;
+    cout << "Test 4 Output = " << countHighlyProfitableMonths(prices4, k4) 
+         << " | Expected = 2" << endl;
+
+    // Test 5: Smallest k (k = 1)
+    vector<int> prices5 = {10, 20, 30};
+    int k5 = 1;
+    cout << "Test 5 Output = " << countHighlyProfitableMonths(prices5, k5) 
+         << " | Expected = 3" << endl;
+
+    // Test 6: k equal to n
+    vector<int> prices6 = {1, 2, 3, 4};
+    int k6 = 4;
+    cout << "Test 6 Output = " << countHighlyProfitableMonths(prices6, k6) 
+         << " | Expected = 1" << endl;
+
+    // Test 7: Random zig-zag sequence
+    vector<int> prices7 = {1, 3, 2, 4, 6, 5, 7};
+    int k7 = 3;
+    cout << "Test 7 Output = " << countHighlyProfitableMonths(prices7, k7) 
+         << " | Expected = 1" << endl;
 
     return 0;
 }

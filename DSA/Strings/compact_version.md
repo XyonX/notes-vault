@@ -71,3 +71,9 @@
 - Second approach returns longer of two possible substrings when characters don't match
 - Both have exponential time complexity O(2^(m+n))
 - Known Issues: Inefficient for large inputs; DP solution would be better
+
+## longest_palindromic_substring
+- **Approach**: Expand around center for odd/even length palindromes. Track max length and substring bounds.
+- **Time**: O(n²)
+- **Space**: O(1)
+- **Key**: LeetCode #5; Efficient for interview constraints.

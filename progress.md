@@ -67,6 +67,7 @@
 - longest_common_subsequence: solved
 - longest_palindromic_subsequence: attempted
 - longest_common_substring: solved
+- longest_palindromic_substring: solved
 
 ### Linked_List
 - create_linked_list: solved
@@ -91,6 +92,8 @@
 - diameter_of_binary_tree: solved
 - lowest_common_ancestor: solved
 - validate_bst: solved
+- tree_array_representation: solved
+- tree_inorder_iterative: solved
 
 ### Sorting
 - merge_sort: solved
@@ -101,6 +104,7 @@
 ### Sliding_Window
 - birthday_chocolate: solved
 - maximum_subarray_sum_size_k: solved
+- detect_high_load_windows: solved
 
 ### Backtracking
 - sudoku_solver: solved
@@ -122,6 +126,9 @@
 
 ### Matrix
 - set_matrix_zeroes: solved
+
+### Heaps
+- max_heap_implementation: solved
 
 ## Operating_System
 - os_roadmap: solved

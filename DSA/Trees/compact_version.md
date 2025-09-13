@@ -18,3 +18,15 @@
 
 ## validate_bst
 - Notes: Validates if a binary tree is a valid binary search tree by checking node values against a valid range. Time complexity O(n), space complexity O(h).
+
+## tree_array_representation
+- **Approach**: Array storage for complete binary tree (level order). Index formulas for parent/children. Iterative preorder using stack (push right then left).
+- **Time**: O(1) access, O(n) traversal
+- **Space**: O(n) array + O(h) stack
+- **Key**: Space-efficient vs pointer trees; useful for heaps.
+
+## tree_inorder_iterative
+- **Approach**: Stack-based inorder (LNR). Nullify left after pushing to avoid loops; print when no left remains, then push right.
+- **Time**: O(n)
+- **Space**: O(h)
+- **Key**: Modifies tree temporarily; alternative to recursion for deep trees.

@@ -86,3 +86,6 @@
 - This problem demonstrates the difference between substring (contiguous) and subsequence (not necessarily contiguous)
 - A dynamic programming solution would be more efficient with O(m*n) time complexity
 - The problem is a good example of how recursion can lead to exponential time complexity and why optimization techniques like memoization or DP are needed
+
+## longest_palindromic_substring
+Expand Around Center is a classic approach for palindrome problems. For each possible center (character for odd, between characters for even), expand while characters match. Track the longest found. This beats Manacher's algorithm in simplicity for interviews, though O(n²) is acceptable for n≤1000. Common pitfalls: forgetting even-length cases, off-by-one in bounds. LeetCode #5 often pairs with Longest Palindromic Subsequence (#516) to contrast contiguous vs non-contiguous.
