@@ -1,6 +1,116 @@
 q1--
 
 
+//fixed version
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+using namespace std;
+
+
+/*
+Identify time periods when a system experiences high load based on a rolling average calculation. For each minute in the monitoring period, calculate the average load over the most recent window of minutes. If this average exceeds the specified threshold, include that minute in your results.
+The function detectHighLoadWindows will take three inputs:
+int loadsin]: system load at each minute i (O-based) int windowSize: size of the rolling window in minutes int threshold: average load threshold to compare
+against
+
+*/
+
+vector<int> detectHighLoadWindows(vector<int>& loads, int windowSize, int threshold){
+    
+    vector<int>res;
+    long long  sum=0;
+    for(int i=0;i<windowSize;i++){
+        sum+=loads[i];
+    }
+    
+    if( sum>1LL*threshold*windowSize){
+        res.push_back(windowSize-1);
+    }
+    
+    for(int i=windowSize;i<loads.size();i++){
+        sum-=loads[i-windowSize];
+        sum+=loads[i];
+        
+        if(sum> 1LL*threshold*windowSize){
+            res.push_back(i);
+        }
+    }
+    
+    return res;
+}
+
+
+
+
+int main() {
+    // Test 1: Simple case
+    vector<int> loads1 = {1, 2, 3, 4, 5};
+    int windowSize1 = 3;
+    int threshold1 = 3;
+    auto res1 = detectHighLoadWindows(loads1, windowSize1, threshold1);
+    cout << "Test 1 result: ";
+    for (int x : res1) cout << x << " ";
+    cout << " | Expected: 4" << endl;
+
+    // Test 2: All values equal
+    vector<int> loads2 = {5, 5, 5, 5, 5};
+    int windowSize2 = 2;
+    int threshold2 = 5;
+    auto res2 = detectHighLoadWindows(loads2, windowSize2, threshold2);
+    cout << "Test 2 result: ";
+    for (int x : res2) cout << x << " ";
+    cout << " | Expected:" << endl;
+
+    // Test 3: Window size = 1
+    vector<int> loads3 = {1, 10, 2, 9};
+    int windowSize3 = 1;
+    int threshold3 = 5;
+    auto res3 = detectHighLoadWindows(loads3, windowSize3, threshold3);
+    cout << "Test 3 result: ";
+    for (int x : res3) cout << x << " ";
+    cout << " | Expected: 1 3" << endl;
+
+    // Test 4: Low threshold
+    vector<int> loads4 = {2, 3, 4};
+    int windowSize4 = 2;
+    int threshold4 = 1;
+    auto res4 = detectHighLoadWindows(loads4, windowSize4, threshold4);
+    cout << "Test 4 result: ";
+    for (int x : res4) cout << x << " ";
+    cout << " | Expected: 1 2" << endl;
+
+    // Test 5: High threshold
+    vector<int> loads5 = {10, 20, 30};
+    int windowSize5 = 2;
+    int threshold5 = 50;
+    auto res5 = detectHighLoadWindows(loads5, windowSize5, threshold5);
+    cout << "Test 5 result: ";
+    for (int x : res5) cout << x << " ";
+    cout << " | Expected:" << endl;
+
+    // Test 6: Negatives + positives
+    vector<int> loads6 = {-5, -2, 10, 5, -1};
+    int windowSize6 = 3;
+    int threshold6 = 2;
+    auto res6 = detectHighLoadWindows(loads6, windowSize6, threshold6);
+    cout << "Test 6 result: ";
+    for (int x : res6) cout << x << " ";
+    cout << " | Expected: 3 4" << endl;
+
+    // Test 7: Window size = array size
+    vector<int> loads7 = {4, 6, 8, 10};
+    int windowSize7 = 4;
+    int threshold7 = 6;
+    auto res7 = detectHighLoadWindows(loads7, windowSize7, threshold7);
+    cout << "Test 7 result: ";
+    for (int x : res7) cout << x << " ";
+    cout << " | Expected: 3" << endl;
+
+    return 0;
+}
+
+
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -155,6 +265,122 @@ int main() {
 
 
 q2--
+
+optimized one 
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+using namespace std;
+
+
+/*
+
+The problem statement, based on the provided image and context, is as follows:
+
+The stock performance of a company is being examined to assess its net profit over time.
+For a given analysis parameter ( k ), an interval of ( k ) consecutive months is considered highly profitable if the stock prices increase strictly throughout those months. Given the stock prices for ( n ) months and the analysis parameter ( k ), determine the number of such highly profitable intervals.
+*/
+
+
+
+int countHighlyProfitableMonths(vector <int>stockPrices, int k) {
+    int n=stockPrices.size();
+    int count =0;
+    //build increament array 
+    vector<int>inc;
+    
+    for(int i=0;i<n-1;i++){
+        if(stockPrices[i+1]> stockPrices[i]){
+            inc.push_back(1);
+        }else{
+            inc.push_back(-1);
+        }
+    }
+    
+    int sum=0;
+    //now first slide over the inc array
+    int windowSize=k-1;
+    for(int i=0;i<windowSize;i++){
+        sum+=inc[i];
+    }
+    if(sum==windowSize)count++;
+    
+    for(int i=windowSize;i<n-1;i++){
+        sum-=inc[i-windowSize];
+        sum+=inc[i];
+        if(sum==windowSize)count++;
+    }
+    return count;
+    
+}
+
+
+int main() {
+    // Test 1: Simple increasing sequence
+    {
+        vector<int> stockPrices = {1, 2, 3, 4, 5};
+        int k = 3;
+        cout << "Test 1 Expected: 3, Got: "
+             << countHighlyProfitableMonths(stockPrices, k) << endl;
+        // Explanation: [1,2,3], [2,3,4], [3,4,5]
+    }
+
+    // Test 2: No increasing sequence
+    {
+        vector<int> stockPrices = {5, 5, 5, 5};
+        int k = 2;
+        cout << "Test 2 Expected: 0, Got: "
+             << countHighlyProfitableMonths(stockPrices, k) << endl;
+        // Explanation: Prices never strictly increase
+    }
+
+    // Test 3: k = 1 (edge case)
+    {
+        vector<int> stockPrices = {2, 4, 6};
+        int k = 1;
+        cout << "Test 3 Expected: 3, Got: "
+             << countHighlyProfitableMonths(stockPrices, k) << endl;
+        // Explanation: Every single month counts as increasing
+    }
+
+    // Test 4: Mixed increases and decreases
+    {
+        vector<int> stockPrices = {1, 2, 1, 2, 3};
+        int k = 2;
+        cout << "Test 4 Expected: 3, Got: "
+             << countHighlyProfitableMonths(stockPrices, k) << endl;
+        // Explanation: [1,2] (index 0-1), [1,2] (index 2-3), [2,3] (index 3-4)
+    }
+
+    // Test 5: Large k value (equals array size)
+    {
+        vector<int> stockPrices = {1, 3, 5, 7};
+        int k = 4;
+        cout << "Test 5 Expected: 1, Got: "
+             << countHighlyProfitableMonths(stockPrices, k) << endl;
+        // Explanation: Whole array is strictly increasing
+    }
+
+    // Test 6: Hard case - alternating up and down
+    {
+        vector<int> stockPrices = {1, 3, 2, 4, 3, 5, 4, 6};
+        int k = 3;
+        cout << "Test 6 Expected: 0, Got: "
+             << countHighlyProfitableMonths(stockPrices, k) << endl;
+        // Explanation: No 3-length strictly increasing subsequence
+    }
+
+    // Test 7: Long strictly increasing array
+    {
+        vector<int> stockPrices = {1,2,3,4,5,6,7,8,9,10};
+        int k = 5;
+        cout << "Test 7 Expected: 6, Got: "
+             << countHighlyProfitableMonths(stockPrices, k) << endl;
+        // Explanation: Windows: [1,2,3,4,5] up to [6,7,8,9,10]
+    }
+
+    return 0;
+}
+
 
 // Online C++ compiler to run C++ program online
 #include <bits/stdc++.h>
