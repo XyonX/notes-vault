@@ -294,3 +294,201 @@ int main() {
     return 0;
 }
 
+
+
+# TWO POINTER - Two Sum
+
+vector<int> twoSum(vector<int>& nums, int target) {
+    
+    int l=0;
+    int r=nums.size()-1;
+    
+    vector<pair<int,int>>arr;
+    
+    for(int i=0;i<nums.size();i++){
+        arr.push_back({nums[i],i});
+    }
+    sort(arr.begin(),arr.end());
+    
+    while(l<r){
+        int sum= arr[l].first+arr[r].first;
+        
+        if(sum==target){
+            return {arr[l].second,arr[r].second};
+        }
+        else if(sum<target){
+            l++;
+            
+        }else{
+            r--;
+        }
+    }
+    return {};
+
+}
+
+TWO POINTER -THREE SUM
+
+
+class Solution {
+public:
+    vector<vector<int>> threeSum(vector<int>& nums) {
+
+        vector<vector<int>>res;
+        int n=nums.size();
+
+        vector<int>nums1=nums;
+
+        sort(nums1.begin(),nums1.end());
+
+        for(int i=0;i<n;i++){
+
+            if(i>0 &&  nums1[i]== nums1[i-1])continue;
+
+            int target = -nums1[i];
+            int l=i+1;
+            int r=n-1;
+            while(l<r){
+                int sum=nums1[l]+nums1[r];
+                if(sum==target){
+                    res.push_back({nums1[i],nums1[l],nums1[r]});
+                    l++;
+                    r--;
+                    while(l<r && nums1[l]==nums1[l-1] )l++;
+                    while(l<r && nums1[r]==nums1[r+1]) r--;
+                }else if(sum<target){
+                    l++;
+                }else{
+                    r--;
+                }
+            }
+
+        }
+
+        
+        return res;
+        
+    }
+};
+
+
+-GROUP ANAGRAM
+
+class Solution {
+public:
+    vector<vector<string>> groupAnagrams(vector<string>& strs) {
+
+        map<string,vector<string>>freq;
+        vector<vector<string>>res;
+
+        for(int i=0;i<strs.size();i++){
+            
+            string str=strs[i];
+            sort(str.begin(),str.end());
+            freq[str].push_back(strs[i]);
+
+        }
+        for(auto& it : freq){
+            res.push_back(it.second);
+        }
+        return res;
+        
+    }
+};
+
+--max score from cards
+class Solution {
+public:
+    int maxScore(vector<int>& cardPoints, int k) {
+        
+        int leftSum=0;
+        int rightSum=0;
+        int maxScore=INT_MIN;
+
+        for(int i=0;i<k;i++){
+            leftSum+=cardPoints[i];
+        }
+        maxScore=leftSum+rightSum;
+        int rightIndex=cardPoints.size()-1;
+
+        for(int i=k-1;i>=0;i--){
+            leftSum-=cardPoints[i];
+            rightSum+=cardPoints[rightIndex];
+            rightIndex--;
+            maxScore=max(maxScore,leftSum+rightSum);
+        }
+        return maxScore;
+    }
+};
+
+-LONGEST SUBSTRING WITHOUT REPEATING CHAR
+class Solution {
+public:
+    int lengthOfLongestSubstring(string s) {
+
+        map<int,int>freq;
+        int l=0;
+        int maxLength=0;
+
+        for(int r=0;r<s.size();r++){
+
+            if(freq.find(s[r]) != freq.end() &&  freq[s[r]]>= l){
+                l=freq[s[r]]+1;
+            }
+            freq[s[r]]=r;
+
+            maxLength=max(maxLength,r-l+1);
+        }
+
+        return maxLength;
+
+        
+    }
+};
+
+--VALID PALINDROME
+class Solution {
+public:
+    bool isPalindrome(string s) {
+        int l=0;
+        int r=s.size()-1;
+
+        while(l<r){
+            while(l<r && !isalnum(s[l]))l++;
+            while(l<r && !isalnum(s[r]))r--;
+            if(tolower(s[l])!= tolower(s[r]))return false;
+            l++;
+            r--;
+        }
+        return true;
+    }
+};
+
+-LONGES CONSECUTIVE SUBSEQEUNCE SORTED VERSION
+
+class Solution {
+public:
+    int longestConsecutive(vector<int>& nums) {
+        if(nums.size()==0)return 0;
+        
+        vector<int>nums1=nums;
+        sort(nums1.begin(),nums1.end());
+
+        int count=1;
+        int maxCount=1;
+
+        for(int i=1;i<nums1.size();i++){
+            if (nums1[i] == nums1[i-1]) {
+                continue; // skip duplicate
+            } 
+            if(nums1[i] ==nums1[i-1]+1){
+                count++;
+            }else{
+                count=1;
+            }
+            maxCount=max(count,maxCount);
+        }
+
+        return maxCount;
+    }
+};
