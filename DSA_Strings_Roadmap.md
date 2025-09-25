@@ -12,9 +12,9 @@ Understand foundational techniques for mid-level string problems to build intuit
     - Character frequency counting (using arrays or hash maps).
     - String immutability and its implications (e.g., Python strings are immutable).
   - **Problems to Solve:**
-    - [ ] Longest Substring Without Repeating Characters (LeetCode #3)
+    - [x] Longest Substring Without Repeating Characters (LeetCode #3)
     - [ ] Minimum Window Substring (LeetCode #76)
-    - [ ] Group Anagrams (LeetCode #49)
+    - [x] Group Anagrams (LeetCode #49)
   - **Focus:** Optimize time and space complexity (e.g., O(n) time with O(1) space for fixed-size alphabets).
 
 - [ ] **Pattern Matching Algorithms**
