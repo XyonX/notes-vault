@@ -52,9 +52,7 @@
 - search_in_rotated_sorted_array: solved
 - remove_duplicates_from_sorted_array: solved
 
-### Arrays
-
-### Strings
+### Arrays\n- longest_subarray_same_elements: solved\n\n### Strings
 - check_anagrams: solved
 - check_palindrome: solved
 - chessboard_color: solved
