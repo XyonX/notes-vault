@@ -1,0 +1,5 @@
+
+1. differnece between a kernal and os:kernal contains the core os implentation, as  a whooe operating system the os can have otehr moduls for audio  , gui, system application and all but the kernal contians onlyt  the necessay implementaion
+
+2. What are the differences between monolithic, microkernel, and hybrid kernels: the differnet lies how the kernal works and how the architecture of the kernal monolithiic is a big singular implementation of the hwole klernal whihch is not modular good for simple small operatng system, now microkernal is a bit modular it has two space for normal programmer it runs on user space , but for previllae programme the programme can run on kernal space ,hybrid kernal; uses both the approachj monolithing kernal for speed , microkernal for modularity
+3. What is a real-time operating system (RTOS)?:Real time rtos are operating system that are designed for time -ciritcal tasks
