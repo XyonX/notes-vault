@@ -1,1 +1,160 @@
+HACKERRANK HIGHER THAN 75 MAKRS 
+/*
+Enter your query here.
+*/
+
+-- SELECT Name from STUDENTS WHERE Marks > 75 ORDER BY Name ASC
+SELECT Name from STUDENTS WHERE Marks > 75 ORDER BY Right(Name,3) ASC , ID ASC
+
+HACKERRANK NAME OF EMPLOYEE EMPLOYEE
+
+
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+using namespace std;
+
+
+
+int numOccurence(string p , string s){
+    int count = 0;
+    
+    for(int i=0;i<s.size()-p.size();i++){
+        bool has =true;
+        for(int j=0;j<p.size();j++){
+            if(s[i+j]!=p[j])has=false;
+        }
+        if(has)count++;
+    }
+    
+    return count;
+}
+
+
+
+
+int main() {
+
+    string p = "ac";
+    string s = "abceacfcacb";
+    cout<<numOccurence(p,s);
+
+    return 0;
+}
+
+
+00
+
+#include <bits/stdc++.h>
+using namespace std;
+
+/*
+Given an integer array, find the contiguous subarray with the largest sum and return that sum.
+*/
+
+// Function to find the maximum subarray sum
+int maxSubArray(vector<int>& nums) {
+
+    int maxSum=INT_MIN;
+    int sum=0;
+    
+    for(int i=0;i<nums.size();i++){
+        sum+=nums[i];
+        if(sum>maxSum)maxSum=sum;
+        if(sum<0)sum=0;
+    }
+    return maxSum; // Placeholder
+}
+
+int main() {
+    // Test case 1
+    vector<int> nums1 = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
+    cout << "Test case 1: " << maxSubArray(nums1) << endl; // Expected: 6
+
+    // Test case 2
+    vector<int> nums2 = {1};
+    cout << "Test case 2: " << maxSubArray(nums2) << endl; // Expected: 1
+
+    // Test case 3
+    vector<int> nums3 = {5, 4, -1, 7, 8};
+    cout << "Test case 3: " << maxSubArray(nums3) << endl; // Expected: 23
+
+    // Test case 4: All negative numbers
+    vector<int> nums4 = {-8, -3, -6, -2, -5, -4};
+    cout << "Test case 4: " << maxSubArray(nums4) << endl; // Expected: -2
+
+    // Test case 5: All positive numbers
+    vector<int> nums5 = {2, 3, 1, 5, 4};
+    cout << "Test case 5: " << maxSubArray(nums5) << endl; // Expected: 15
+
+    // Test case 6: Alternating small highs and lows
+    vector<int> nums6 = {-1, 3, -2, 4, -1, 2, -5, 2};
+    cout << "Test case 6: " << maxSubArray(nums6) << endl; // Expected: 7
+
+    // Test case 7: Large negative followed by positives
+    vector<int> nums7 = {-100, 1, 2, 3, 4, 5};
+    cout << "Test case 7: " << maxSubArray(nums7) << endl; // Expected: 15
+
+    // Test case 8: Large positive followed by negatives
+    vector<int> nums8 = {100, -10, -20, -30, -40};
+    cout << "Test case 8: " << maxSubArray(nums8) << endl; // Expected: 100
+
+    // Test case 9: Zeros and negatives
+    vector<int> nums9 = {0, -1, 0, -2, 0, -3};
+    cout << "Test case 9: " << maxSubArray(nums9) << endl; // Expected: 0
+
+    // Test case 10: Long flat region
+    vector<int> nums10 = {-1, -1, -1, 0, 0, 0, -1, -1};
+    cout << "Test case 10: " << maxSubArray(nums10) << endl; // Expected: 0
+
+    return 0;
+}
+
+public class CipherTest {
+
+    // Function template: takes key and cipher string, returns decoded string
+    public static String decodeCipher(int key, String cipherText) {
+        
+        StringBuilder sb = new StringBuilder();
+        for(char c : cipherText.toCharArray()){
+            c= (char) (c-key);
+            sb.append(c);
+        }
+        
+        return sb.toString();
+    }
+
+    public static void main(String[] args) {
+        // Test cases
+        System.out.println("Test Case 1: Input=(key=14, cipher=\"uccd\") -> Expected Output=\"good\"");
+        System.out.println("Decoded: " + decodeCipher(14, "uccd"));
+
+        System.out.println("Test Case 2: Input=(key=3, cipher=\"khoor\") -> Expected Output=\"hello\"");
+        System.out.println("Decoded: " + decodeCipher(3, "khoor"));
+
+        System.out.println("Test Case 3: Input=(key=1, cipher=\"bqqmf\") -> Expected Output=\"apple\"");
+        System.out.println("Decoded: " + decodeCipher(1, "bqqmf"));
+
+        System.out.println("Test Case 4: Input=(key=5, cipher=\"ymnx\") -> Expected Output=\"this\"");
+        System.out.println("Decoded: " + decodeCipher(5, "ymnx"));
+
+        System.out.println("Test Case 5: Input=(key=2, cipher=\"jgnnq\") -> Expected Output=\"hello\"");
+        System.out.println("Decoded: " + decodeCipher(2, "jgnnq"));
+
+        System.out.println("Test Case 6: Input=(key=7, cipher=\"olssv\") -> Expected Output=\"hello\"");
+        System.out.println("Decoded: " + decodeCipher(7, "olssv"));
+
+        System.out.println("Test Case 7: Input=(key=4, cipher=\"xliwi\") -> Expected Output=\"tessa\"");
+        System.out.println("Decoded: " + decodeCipher(4, "xliwi"));
+
+        System.out.println("Test Case 8: Input=(key=13, cipher=\"uryyb\") -> Expected Output=\"hello\"");
+        System.out.println("Decoded: " + decodeCipher(13, "uryyb"));
+
+        System.out.println("Test Case 9: Input=(key=25, cipher=\"gppc\") -> Expected Output=\"hoop\"");
+        System.out.println("Decoded: " + decodeCipher(25, "gppc"));
+
+        System.out.println("Test Case 10: Input=(key=8, cipher=\"zqop\") -> Expected Output=\"rghi\"");
+        System.out.println("Decoded: " + decodeCipher(8, "zqop"));
+    }
+}
+
 

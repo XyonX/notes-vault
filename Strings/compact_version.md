@@ -1,1 +1,0 @@
-## reverse_words\n- Reverse words after trimming spaces: whole reverse + per-word reverse. Notes: O(n), handles multiples/single/empty.\n\n

@@ -1,1 +1,3 @@
-# Mock Test Logs\n\n- English mock test: english_2025-09-19_medium_20_questions.md - Difficulty: Medium - Status: Started
+# Mock Test Logs
+
+- DBMS mock test: DBMS_2025-10-28_medium_20_questions.md - Difficulty: Medium - Status: Started

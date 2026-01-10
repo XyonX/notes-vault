@@ -1,0 +1,322 @@
+{
+  "main": {
+    "id": "9092d7439d055ee1",
+    "type": "split",
+    "children": [
+      {
+        "id": "2b964872dfd98953",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "78d201c3b6cbd330",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "mocktests/dsa/dsa_2025-08-15_easy_30_questions.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "dsa_2025-08-15_easy_30_questions"
+            }
+          },
+          {
+            "id": "93cc2609e639ae53",
+            "type": "leaf",
+            "state": {
+              "type": "vscode-editor",
+              "state": {
+                "file": "Operating_System/practical/process.cpp"
+              },
+              "icon": "lucide-file",
+              "title": "process"
+            }
+          },
+          {
+            "id": "bae43f1a07a4d07b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "DBMS/final-technical-interview-recap.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "final-technical-interview-recap"
+            }
+          },
+          {
+            "id": "06ec309979e012d3",
+            "type": "leaf",
+            "state": {
+              "type": "bases",
+              "state": {
+                "file": "Untitled 4.base",
+                "viewName": "Table"
+              },
+              "icon": "lucide-table",
+              "title": "Untitled 4"
+            }
+          },
+          {
+            "id": "cf17c796554649d0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "interpreted-vs-compiled-vs-jit.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "interpreted-vs-compiled-vs-jit"
+            }
+          },
+          {
+            "id": "006b86715ed85be8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "how-does-interpreted-languages-works.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "how-does-interpreted-languages-works"
+            }
+          },
+          {
+            "id": "4e98e6fc57892e45",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "interpreter-process.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "interpreter-process"
+            }
+          },
+          {
+            "id": "b7f5e281537a6646",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "idioms.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "idioms"
+            }
+          }
+        ],
+        "currentTab": 7
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "f0498e5d12a1a050",
+    "type": "split",
+    "children": [
+      {
+        "id": "5908125c8f8d8016",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1185295a6b2b81fb",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "9642f3726636ae5a",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "058162dcf4dde7ac",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "right": {
+    "id": "a1f90cec8cde3740",
+    "type": "split",
+    "children": [
+      {
+        "id": "413bb2a0555b678b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "730c44d657fbacd0",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Operating_System/Concepts/Types-Of-Os.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Types-Of-Os"
+            }
+          },
+          {
+            "id": "66a5e3456d60f2b8",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Operating_System/Concepts/Types-Of-Os.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Types-Of-Os"
+            }
+          },
+          {
+            "id": "11bb0bae3468ecff",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "49c87ba81cded43b",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Python/problems/basics.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of basics"
+            }
+          },
+          {
+            "id": "fb2b7377168cd753",
+            "type": "leaf",
+            "state": {
+              "type": "copilot-chat-view",
+              "state": {},
+              "icon": "message-square",
+              "title": "Copilot"
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "horizontal",
+    "width": 591.5,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false,
+      "copilot:Open Copilot Chat": false,
+      "vscode-editor:Create Code File": false,
+      "iconic:Open rulebook": false
+    }
+  },
+  "active": "b7f5e281537a6646",
+  "lastOpenFiles": [
+    "tools/cmake/how-to-write-cmake-list.md",
+    "idioms.md",
+    "interpreter-process.md",
+    "tools/cmake",
+    "tools/Untitled",
+    "tools",
+    "how-does-interpreted-languages-works.md",
+    "interpreted-vs-compiled-vs-jit.md",
+    "Untitled 4.base",
+    "Untitled 3.base",
+    "Untitled 2.base",
+    "Untitled 1.base",
+    "Operating_System/mindmap.md",
+    "Operating_System/compact_version.md",
+    "Operating_System/practical/process.cpp",
+    "node-101/i101-01-node-basics.md",
+    "node-101",
+    "DBMS/final-technical-interview-recap.md",
+    "mocktests/DBMS/DBMS_2025-10-28_medium_20_questions.md",
+    "Top_50_LeetCode_Problems_on_Arrays,_Strings,_and_Hashing.md",
+    "standard_200_dsa_questions.md",
+    "total-techinical-reacap-2-day-questions.md",
+    "total-techinical-reacap-2-day-answers.md",
+    "Operating_System/topics/10-interrupts.md",
+    "Operating_System/topics/09-Interrupt-handling.md",
+    "DSA_Recap_5_Day.md",
+    "recent_snippets.txt.sb-89229ad3-9mvLOn",
+    "top_200_dsa_questions.md",
+    "networking/roadmap.md",
+    "networking/03-sockets.md",
+    "networking/02-tcp-ip-hardware-involvement.md",
+    "networking/00-how-internet-works.md",
+    "DBMS/02-types-of-databse.md",
+    "DBMS/01-file-system-vs-dbms.md",
+    "DBMS/concepts.md",
+    "DBMS/roadmap.md",
+    "Operating_System/Concepts/Untitled.canvas"
+  ]
+}

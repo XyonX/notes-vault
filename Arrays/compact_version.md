@@ -1,1 +1,0 @@
-## longest_subarray_same_elements\n- Two pointers to find max consecutive identical elements. Notes: O(n), tests confirm edges.\n\n

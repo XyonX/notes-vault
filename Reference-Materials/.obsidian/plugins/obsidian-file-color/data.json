@@ -1,0 +1,46 @@
+{
+  "cascadeColors": false,
+  "colorBackground": true,
+  "palette": [
+    {
+      "id": "d-cZhqBYD8IP7JzATsxZF",
+      "name": "RED",
+      "value": "#ffc2c2"
+    },
+    {
+      "id": "q__UMOIin6Rs1HKu90_x4",
+      "name": "Electric Blue",
+      "value": "#4cc9f0"
+    },
+    {
+      "id": "5_uTMa1fECZ8sA2lNdsAT",
+      "name": "Neon Pink",
+      "value": "#f72585"
+    },
+    {
+      "id": "nV0O7l0cXAogCo-Zo_LdD",
+      "name": "Violet",
+      "value": "#7209b7"
+    },
+    {
+      "id": "zQmNyYLxUvBVQKsDbbp4O",
+      "name": "Teal",
+      "value": "#3a86ff"
+    },
+    {
+      "id": "k7k7YVF9gn_zP_RYHrZHa",
+      "name": "Mint Green",
+      "value": "#80ff8b"
+    }
+  ],
+  "fileColors": [
+    {
+      "path": "Operating_System",
+      "color": "d-cZhqBYD8IP7JzATsxZF"
+    },
+    {
+      "path": "Operating_System/problems/os_roadmap",
+      "color": "q__UMOIin6Rs1HKu90_x4"
+    }
+  ]
+}

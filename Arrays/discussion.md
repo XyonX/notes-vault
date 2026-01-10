@@ -1,1 +1,0 @@
-## longest_subarray_same_elements\nDiscussion: Simple linear scan for runs of same values. Extends to binary arrays (LC 485). Useful for streak-finding problems.\n\n
