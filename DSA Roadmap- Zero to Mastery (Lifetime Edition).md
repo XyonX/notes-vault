@@ -43,9 +43,9 @@ Since you already have foundational experience, this roadmap will help you **reo
 ### 🎯 Problems to Solve
 
 #### Complexity Analysis
-- [ ] Understand O(1), O(n), O(n²), O(log n), O(n log n)
-- [ ] Analyze complexity of nested loops
-- [ ] Space complexity basics
+- [x] Understand O(1), O(n), O(n²), O(log n), O(n log n)
+- [x] Analyze complexity of nested loops
+- [x] Space complexity basics
 
 #### Basic Math
 - [ ] Count digits in a number
